@@ -46,6 +46,10 @@ jobs:
        sudo mv migrate /usr/bin/migrate
        which migrate
 
+    - name: Install covdata (fix go test -cover issue)
+      run: |
+        go install cmd/cover/covdata@latest
+        
     - name: Run migrations
       run: make migrateup
 
