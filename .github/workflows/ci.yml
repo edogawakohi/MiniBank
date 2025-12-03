@@ -50,4 +50,6 @@ jobs:
       run: make migrateup
 
     - name: Test
+      env:
+        DB_URL: postgres://root:123@postgres:5432/mini_bank?sslmode=disable
       run: make test
